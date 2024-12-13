@@ -1,14 +1,15 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-void duplicar(vector<int> &vec){
-    //sino posem el &valor no furula
-    //li passariem la referencia del vec pero al no posar el &
-    //com no operem amb el valor, de vec no es modificaria
-    for (int &valor: vec){
-        valor*=2;
+void duplicar(vector<int> &vec)
+{
+    // sino posem el &valor no furula
+    // li passariem la referencia del vec pero al no posar el &
+    // com no operem amb el valor, de vec no es modificaria
+    for (int &valor : vec)
+    {
+        valor *= 2;
     }
-
 }
 void exemple(int num)
 {
@@ -17,6 +18,15 @@ void exemple(int num)
 void exemple2(int &num)
 {
     num = 50;
+}
+void mostrarMsm(string msm = "Hola", int voltes = 1)
+{
+    for (int i = 0; i < voltes; i++)
+    {
+        cout << msm << endl;
+    }
+    cout << "Este es el msm " << msm << "\n"
+         << "Estos son el num de voltes " << voltes << endl;
 }
 int main()
 {
@@ -32,14 +42,19 @@ int main()
     cout << "valor despres de apssar variaable a f amb ref " << min << endl;
     vector<int> num = {1, 2, 3, 4, 5};
     cout << "valors originals ";
-    for(int valor:num){
+    for (int valor : num)
+    {
         cout << valor << " ";
     }
     cout << endl;
     duplicar(num);
     cout << "valors despres ";
-    for(int valor:num){
+    for (int valor : num)
+    {
         cout << valor << " ";
     }
-
+    cout << "\n";
+    ////////////////////////////////////
+    // parametres per defecte //
+    mostrarMsm();
 }
